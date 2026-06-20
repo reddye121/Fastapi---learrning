@@ -30,6 +30,23 @@ def delete_employees(emp_id:int):
         if emp["id"]== emp_id:
             employees.remove(emp)
             return {"message":"Change is successfully updated"}
+        
+# PATH PARAMETER EXAMPLE
+@app.get("/employee/{emp_id}")
+def get_employee(emp_id: int):
+    return {
+        "message": "Path Parameter Example",
+        "employee_id": emp_id
+    }
+
+
+# QUERY PARAMETER EXAMPLE
+@app.get("/search")
+def search_employee(name: str):
+    return {
+        "message": "Query Parameter Example",
+        "name": name
+    }
 
 
 
